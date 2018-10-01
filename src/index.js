@@ -1,5 +1,10 @@
+/* eslint react/jsx-filename-extension: "off" */
+/* global document */ 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-dom'; 
+import { BrowserRouter as Router } from 'react-router-dom'; 
+import AppRoutes from './routes';
 import './index.css';
 import App from './component/App';
 import registerServiceWorker from './registerServiceWorker';
@@ -16,5 +21,10 @@ function unmount() {
     unmountButton.addEventListener('click', unmount);
     document.getElementById('unmountMessage').style.display = 'none';
 
-    ReactDOM.render(<App />, document.getElementById('root'));
-    registerServiceWorker();
+    render(  
+        <Router>    
+            <AppRoutes />  
+        </Router>,  
+        document.getElementById('root') 
+    );
+

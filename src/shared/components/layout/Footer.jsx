@@ -1,3 +1,4 @@
+/* eslint react/jsx-filename-extension: "off" */
 import React from 'react';
 const Footer = () => (    
     <footer>
